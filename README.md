@@ -1,4 +1,11 @@
-SimpleRequestHandler
+SimpleDispatcher
 ====================
+Simple Request Dispather implementation written in PHP.
 
-Simple Request Handler implement written in PHP.
+Install
+====================
+TODO
+
+License
+====================
+MIT License

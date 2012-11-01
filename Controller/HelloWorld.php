@@ -5,13 +5,18 @@
 namespace Controller;
 class HelloWorld 
 {
-	
-	function __construct()
-	{
-	}
-
 	public function index()
 	{
-		echo 'Hello World';
+		echo __class__;
+	}
+
+	public function sayhello()
+	{
+		echo 'Hello!';
+	}
+
+	public function say($str)
+	{
+		echo $str;
 	}
 }
