@@ -19,6 +19,7 @@
  */
 class SplClassLoader
 {
+    private static $_loaders = array();
     private $_fileExtension = '.php';
     private $_namespace;
     private $_includePath;
@@ -131,6 +132,35 @@ class SplClassLoader
             $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . $this->_fileExtension;
 
             require ($this->_includePath !== null ? $this->_includePath . DIRECTORY_SEPARATOR : '') . $fileName;
+        }
+    }
+
+     /**
+     * Register ClassLoader
+     *
+     * @static
+     * @param string $ns The namespace to use.
+     * @return void
+     */
+    public static function registerNamespace($ns, $path = null)
+    {
+        $cl = new self($ns, $path);
+        $cl->register();
+
+        self::$_loaders[$ns . $path] = $cl;
+    }
+
+    /**
+     * Unregister ClassLoader
+     *
+     * @static
+     * @param string $ns The namespace to use.
+     * @return void
+     */
+    public static function unregisterNamespace($ns, $path = null)
+    {
+        if (isset(self::$_loaders[$ns . $path])) {
+            self::$_loaders[$ns . $path]->unregister();
         }
     }
 }
