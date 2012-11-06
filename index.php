@@ -1,15 +1,11 @@
 <?php
 
 require 'SplClassLoader.php';
-$classLoader = new SplClassLoader('Controller', __DIR__);
-$classLoader->register();
+SplClassLoader::registerNamespace('Controller', __DIR__);
+SplClassLoader::registerNamespace('Srd', __DIR__ . '/Lib');
 
-$requestArray = explode('/', $_SERVER['REQUEST_URI']);
-$requestParams = array();
+$request = new Srd\Request();
+$response = new Srd\Response();
+$dispatcher = new Srd\Dispatcher();
 
-$className = 'Controller\\' . ((empty($requestArray[2])) ? 'index' : $requestArray[2] );
-$class = new $className();
-
-$action = (empty($requestArray[3])) ? 'index' : $requestArray[3];
-$ReflectMethod = new ReflectionMethod($class, $action);
-$ReflectMethod->invokeArgs($class, $requestParams);
+$dispatcher->dispatch($request, $response);

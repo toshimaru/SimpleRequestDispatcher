@@ -1,8 +1,8 @@
 <?php 
+namespace Controller;
 /**
  * 
  */
-namespace Controller;
 class HelloWorld 
 {
 	public function index()
