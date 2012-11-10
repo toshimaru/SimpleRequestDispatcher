@@ -1,6 +1,6 @@
-SimpleDispatcher
+Simple Request Dispatcher
 ====================
-Simple Request Dispather implementation written in PHP.
+Simple Request Dispather written in PHP.
 
 Install
 ====================
@@ -8,4 +8,4 @@ TODO
 
 License
 ====================
-MIT License
+MIT license

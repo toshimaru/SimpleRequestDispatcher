@@ -1,7 +1,10 @@
 <?php 
 namespace Srd;
 /**
- * 
+ * Request
+ *
+ * @package SimpleRequestDispatcher
+ * @author toshimaru
  */
 class Request
 {
@@ -26,7 +29,7 @@ class Request
 	public $action;
 
 	/**
-	 * parameters
+	 * parameters (url|get|post)
 	 *
 	 * @var array
 	 */
@@ -34,23 +37,39 @@ class Request
 		'url' => array(),
 		'get' => array(),
 		'post' => array(),
-		);
+	);
 
 	public function __construct() {
-		$this->uri = $_SERVER['REQUEST_URI'];
+		$this->url = $_SERVER['REQUEST_URI'];
 		$this->method = $_SERVER['REQUEST_METHOD'];
 		$this->params['get'] = $_GET;
 		$this->params['post'] = $_POST;
-		$this->parseRequest($this->uri);
+		$this->parseRequest($this->url);
 	}
 
-	protected function parseRequest($uri) {
-		$uri = substr($uri, strpos($uri , '?'));
+	/**
+	 * parse request URI, set controller and action
+	 *
+	 * @return void
+	 */
+	protected function parseRequest($url) {
+		$url = str_replace(dirname($_SERVER['PHP_SELF']), '', $url);
+		$url = substr($url, strpos($url , '?'));
 
-		$requestArray = explode('/', $uri);
-		$this->params['uri'] = array();
+		$requestArray = explode('/', $url);
 
-		$this->controller = 'Controller\\' . ((empty($requestArray[2])) ? 'index' : $requestArray[2] );
-		$this->action = (empty($requestArray[3])) ? 'index' : $requestArray[3];
+		$url_params = array_splice($requestArray, 3);
+		$this->params['url'] = $url_params;
+
+		$this->controller = 'Controller\\' . ((empty($requestArray[1])) ? 'index' :  $this->camelize($requestArray[1]) );
+		$this->action = (empty($requestArray[2])) ? 'index' : $requestArray[2];
+	}
+
+	protected static function camelize($str) {
+		return str_replace(' ','',ucwords(str_replace('_',' ',$str)));
+	}
+
+	protected static function decamelize($str) {
+		return ltrim(preg_replace('/([A-Z])/e',"'_'.strtolower('$1')",$str),'_');
 	}
 }

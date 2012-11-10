@@ -1,11 +1,8 @@
 <?php
 
-require 'SplClassLoader.php';
+require 'Lib/Srd/SplClassLoader.php';
 SplClassLoader::registerNamespace('Controller', __DIR__);
 SplClassLoader::registerNamespace('Srd', __DIR__ . '/Lib');
 
-$request = new Srd\Request();
-$response = new Srd\Response();
 $dispatcher = new Srd\Dispatcher();
-
-$dispatcher->dispatch($request, $response);
+$dispatcher->dispatch(new Srd\Request(), new Srd\Response());
