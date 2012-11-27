@@ -3,7 +3,7 @@ namespace Controller;
 /**
  * hello world controller
  */
-class HelloWorld extends \Srd\Controller
+class HelloWorld extends Controller
 {
 	public function index() {
 		echo __class__;
