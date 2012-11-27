@@ -1,11 +1,19 @@
 Simple Request Dispatcher
 ====================
-Simple Request Dispather written in PHP.
+Simple Request Dispatcher written in PHP.
+
+Dispatches URL to Controllers.
+Only Contollers. No Models, Views.
+
+Requirements
+--------------
+* Web Server - Apache and mod_rewrite.
+* PHP 5.3 or greater. 
 
 Install
-====================
-TODO
+--------------
+	git clone git://github.com/toshimaru/SimpleRequestDispatcher.git
 
 License
-====================
-MIT license
+--------------
+[MIT license](http://www.opensource.org/licenses/MIT)
