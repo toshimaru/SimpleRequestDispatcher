@@ -6,10 +6,6 @@ namespace Controller;
 class Index extends \Srd\Controller
 {
 	public function index() {
-		echo '<pre>';
-		echo __method__ . "\n";
-		var_dump ($this->request);
-		var_dump ($this->response);
-		echo '</pre>';
+		echo '<h1 style="color:green;">Your request is successfully dispatched!!!</h1>';
 	}
 }
