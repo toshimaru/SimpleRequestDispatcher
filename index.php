@@ -1,6 +1,6 @@
 <?php
 
-require 'Lib/Srd/SplClassLoader.php';
+require 'Lib/Loader/SplClassLoader.php';
 SplClassLoader::registerNamespace('Controller', __DIR__);
 SplClassLoader::registerNamespace('Srd', __DIR__ . '/Lib');
 
