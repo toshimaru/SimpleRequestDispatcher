@@ -15,4 +15,4 @@ License
 --------------
 [MIT license](http://www.opensource.org/licenses/MIT)
 
-[![Build Status](https://travis-ci.org/toshimaru/SimpleRequestDispatcher.png?branch=master)](undefined)
+[![Build Status](https://travis-ci.org/toshimaru/SimpleRequestDispatcher.png?branch=master)](https://travis-ci.org/toshimaru/SimpleRequestDispatcher)
