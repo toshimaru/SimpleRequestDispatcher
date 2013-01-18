@@ -1,9 +1,6 @@
 Simple Request Dispatcher
 ====================
-Simple Request Dispatcher written in PHP.
-
-Dispatches URL to Controllers.
-Only Contollers. No Models, Views.
+Simple Request Dispatcher written in PHP. It Dispatches URL to Controllers. No Models and No Views.
 
 Requirements
 --------------
@@ -17,3 +14,5 @@ Install
 License
 --------------
 [MIT license](http://www.opensource.org/licenses/MIT)
+
+[![Build Status](https://travis-ci.org/toshimaru/SimpleRequestDispatcher.png?branch=master)](undefined)
