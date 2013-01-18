@@ -7,4 +7,4 @@ php:
 env:
   - DB=sqlite
 
-script: phpunit --configuration phpunit.xml --coverage-text
+script: phpunit --configuration Tests/phpunit.xml --coverage-text
