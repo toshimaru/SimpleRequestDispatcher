@@ -3,17 +3,18 @@ namespace Controller;
 /**
  * hello world controller
  */
-class HelloWorld extends Controller
+class Sample extends Controller
 {
 	public function index() {
 		echo __class__;
 	}
 
-	public function sayhello() {
-		echo 'Hello!';
+	public function helloworld() {
+		echo 'Hello World';
 	}
 
 	public function say($str) {
+		var_dump($this->request);
 		echo $str;
 	}
 

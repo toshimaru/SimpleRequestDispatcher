@@ -9,6 +9,13 @@ namespace Srd;
 class Response
 {
 	/**
+	 * Status code to send to the client
+	 *
+	 * @var integer
+	 */
+	protected $_status = 200;
+
+	/**
 	 * HTTP response statuses
 	 *
 	 * @var array
@@ -73,4 +80,18 @@ class Response
 
 	function __construct(array $options = array()) {
 	}
+
+	/**
+	 * Sets the HTTP status code
+	 *
+	 * @param integer $code
+	 * @return integer current status code
+	 */
+	public function statusCode($code = null) {
+		if (is_null($code)) {
+			return $this->_status;
+		}
+		return $this->_status = $code;
+	}
+
 }
