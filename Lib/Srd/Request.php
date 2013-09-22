@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace Srd;
 /**
  * Request
@@ -53,9 +53,12 @@ class Request
 	 * @return void
 	 */
 	protected function parseRequest($url) {
-		$url = str_replace(dirname($_SERVER['PHP_SELF']), '', $url);
-		$url = substr($url, strpos($url , '?'));
+		// TODO: /srd/***
+		// $url = str_replace(dirname($_SERVER['PHP_SELF']), '', $url);
 
+		if (strpos($url,'?') !== false) {
+			$url = substr($url, 0, strpos($url , '?'));
+		}
 		$requestArray = explode('/', $url);
 
 		$url_params = array_splice($requestArray, 3);
