@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace Srd;
 /**
  * Dispatcher
@@ -20,9 +20,8 @@ class Dispatcher
 			$args = $this->args_fill($request->params['url'], count($ReflectMethod->getParameters()));
 			$ReflectMethod->invokeArgs($controller, $args);
 		} catch (\ReflectionException $e) {
-			// change as needed
 			$this->http_response_code($response->statusCode(404));
-			throw new \ReflectionException("Reflection Failed", 1);
+			new Error();
 		}
 	}
 
@@ -79,7 +78,7 @@ class Dispatcher
 					exit('Unknown http status code "' . htmlentities($code) . '"');
 					break;
 			}
-			
+
 			$protocol = (isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0');
 			header($protocol . ' ' . $code . ' ' . $text);
 			$GLOBALS['http_response_code'] = $code;
