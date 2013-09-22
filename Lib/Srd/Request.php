@@ -53,18 +53,18 @@ class Request
 	 * @return void
 	 */
 	protected function parseRequest($url) {
-		// TODO: /srd/***
-		// $url = str_replace(dirname($_SERVER['PHP_SELF']), '', $url);
-
+		if (BASE_DIR !== '/') {
+			$url = str_replace(BASE_DIR, '', $url);
+		}
 		if (strpos($url,'?') !== false) {
-			$url = substr($url, 0, strpos($url , '?'));
+			$url = substr($url, 0, strpos($url, '?'));
 		}
 		$requestArray = explode('/', $url);
 
 		$url_params = array_splice($requestArray, 3);
 		$this->params['url'] = $url_params;
 
-		$this->controller = 'Controller\\' . ((empty($requestArray[1])) ? 'index' :  $this->camelize($requestArray[1]) );
+		$this->controller = 'Controller\\' . ((empty($requestArray[1])) ? 'index' : $this->camelize($requestArray[1]));
 		$this->action = (empty($requestArray[2])) ? 'index' : $requestArray[2];
 	}
 
