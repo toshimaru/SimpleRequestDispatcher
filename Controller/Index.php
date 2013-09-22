@@ -5,10 +5,10 @@ namespace Controller;
  */
 class Index extends Controller
 {
-  /**
-   * default action
-   */
+	/**
+	 * default action
+	 */
 	public function index() {
-		echo '<h1 style="color:green;">Your request is successfully dispatched!!!</h1>';
+		echo '<h1 style="color:green;">Your request is successfully dispatched!</h1>';
 	}
 }
