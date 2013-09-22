@@ -53,7 +53,7 @@ class Request
 	 * @return void
 	 */
 	protected function parseRequest($url) {
-		if (BASE_DIR !== '/') {
+		if (BASE_DIR) {
 			$url = str_replace(BASE_DIR, '', $url);
 		}
 		if (strpos($url,'?') !== false) {

@@ -1,6 +1,6 @@
 <?php
 
-define('BASE_DIR', dirname($_SERVER['PHP_SELF']));
+define('BASE_DIR', substr(dirname($_SERVER['PHP_SELF']), 1));
 
 require 'Lib/Loader/SplClassLoader.php';
 SplClassLoader::registerNamespace('Controller', __DIR__);
