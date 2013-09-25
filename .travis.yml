@@ -1,10 +1,8 @@
 language: php
 
 php:
+  - 5.5
   - 5.4
   - 5.3
 
-env:
-  - DB=sqlite
-
-script: phpunit --configuration Tests/phpunit.xml --coverage-text
+script: phpunit
