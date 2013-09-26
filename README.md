@@ -1,6 +1,6 @@
 Simple Request Dispatcher
 ====================
-PHP Simple Request Dispatcher dispatches URL to Controllers. No Models, No Views.
+PHP Simple Request Dispatcher dispatches URL to Controllers. No Models, No Views. Inspired by CakePHP.
 
 Requirements
 -----

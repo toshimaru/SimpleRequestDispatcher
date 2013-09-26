@@ -1,4 +1,14 @@
 {
+  "name": "SimpleRequestDispatcher",
+  "license": "MIT",
+  "type": "project",
+  "description": "PHP Simple Request Dispatcher dispatches URL to Controllers",
+  "autoload": {
+    "psr-0": {
+      "Controller\\": "",
+      "Srd\\": "Lib/"
+    }
+  },
   "require": {
     "php": ">=5.3"
   },
