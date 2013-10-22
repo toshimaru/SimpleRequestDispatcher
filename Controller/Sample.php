@@ -14,29 +14,28 @@ class Sample extends Controller
 		echo '	<li><a href="' . BASE_DIR . '/sample/say2word/good/morning">URL:/sample/say2word/good/morning</a> (Class:Sample, Method:say2word, Variable1:good, Variable2:morning)</li>';
 		echo '	<li><a href="' . BASE_DIR . '/sample/say3word/how/are/you">URL:/sample/say2word/how/are/you</a> (Class:Sample, Method:say2word, Variable1:how, Variable2:are, Variable3:you)</li>';
 		echo '</ul>';
+
+		return '';
 	}
 
 	public function helloworld() {
-		echo 'Hello World';
+		return 'Hello World';
 	}
 
 	public function say($str) {
-		echo $str;
+		return $str;
 	}
 
 	public function say2word($str, $str2) {
-		echo $str . '<br>';
-		echo $str2;
+		return $str . '<br>' . $str2;
 	}
 
 	public function say3word($str, $str2, $str3) {
-		echo $str . '<br>';
-		echo $str2 . '<br>';
-		echo $str3;
+		return $str . '<br>' . $str2 . '<br>' . $str3;
 	}
 
 	private function cantAccess() {
-		echo 'You can\'t access here';
+		return 'You can\'t access here';
 	}
 
 	public function showRequestInfo() {
