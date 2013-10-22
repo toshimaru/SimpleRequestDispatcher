@@ -3,7 +3,7 @@
 <phpunit bootstrap="Tests/bootstrap.php"
          colors="true"
          strict="false"
-         verbose="true">
+         verbose="false">
 
     <testsuites>
         <testsuite>
@@ -12,7 +12,6 @@
     </testsuites>
 
     <logging>
-        <log type="coverage-clover" target="build/logs/clover.xml"/>
         <log type="coverage-text"/>
     </logging>
 </phpunit>
