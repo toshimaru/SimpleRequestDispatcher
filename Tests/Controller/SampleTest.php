@@ -10,6 +10,11 @@ class SampleTest extends PHPUnit_Framework_TestCase
 		$this->controller = new \Controller\Sample($request, $response);
 	}
 
+	public function testIndex() {
+		$this->expectOutputRegex('/^This is Sample Controller\..*/');
+		$this->controller->index();
+	}
+
 	public function testHelloWorld() {
 		$this->assertEquals('Hello World', $this->controller->helloworld());
 	}

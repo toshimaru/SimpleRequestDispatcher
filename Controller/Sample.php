@@ -14,8 +14,6 @@ class Sample extends Controller
 		echo '	<li><a href="' . BASE_DIR . '/sample/say2word/good/morning">URL:/sample/say2word/good/morning</a> (Class:Sample, Method:say2word, Variable1:good, Variable2:morning)</li>';
 		echo '	<li><a href="' . BASE_DIR . '/sample/say3word/how/are/you">URL:/sample/say2word/how/are/you</a> (Class:Sample, Method:say2word, Variable1:how, Variable2:are, Variable3:you)</li>';
 		echo '</ul>';
-
-		return '';
 	}
 
 	public function helloworld() {

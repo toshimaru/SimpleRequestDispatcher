@@ -19,7 +19,7 @@ class Dispatcher
 			$ReflectMethod = new \ReflectionMethod($controller, $request->action);
 			$args = $this->args_fill($request->params['url'], count($ReflectMethod->getParameters()));
 			$result = $ReflectMethod->invokeArgs($controller, $args);
-			echo $result;
+			if (is_string($result)) { echo $result; }
 		} catch (\ReflectionException $e) {
 			$this->http_response_code($response->statusCode(404));
 			new Error();
