@@ -1,6 +1,6 @@
 <?php
 
-if (dirname($_SERVER['PHP_SELF']) === '/') {
+if (dirname($_SERVER['PHP_SELF']) === '/index.php') {
 	define('BASE_DIR', '');
 } else {
 	define('BASE_DIR', dirname($_SERVER['PHP_SELF']));
