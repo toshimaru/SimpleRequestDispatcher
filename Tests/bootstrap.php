@@ -1,3 +1,3 @@
 <?php
 
-require 'Lib/Loader/SplClassLoader.php';
+require 'vendor/autoload.php';
