@@ -2,7 +2,7 @@
   "name": "SimpleRequestDispatcher",
   "license": "MIT",
   "type": "project",
-  "description": "PHP Simple Request Dispatcher dispatches URL to Controllers",
+  "description": "PHP Simple Request Dispatcher which dispatches URL to Controllers",
   "autoload": {
     "psr-0": {
       "Controller\\": "",
@@ -13,6 +13,7 @@
     "php": ">=5.3"
   },
   "require-dev": {
-    "phpunit/phpunit": "3.7.*"
+    "phpunit/phpunit": "3.7.*",
+    "satooshi/php-coveralls": "dev-master"
   }
 }
