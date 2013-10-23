@@ -9,6 +9,6 @@ class Index extends Controller
 	 * default action
 	 */
 	public function index() {
-		echo '<h1 style="color:green;">Your request is successfully dispatched!</h1>';
+		return '<h1 style="color:green;">Your request is successfully dispatched!</h1>';
 	}
 }

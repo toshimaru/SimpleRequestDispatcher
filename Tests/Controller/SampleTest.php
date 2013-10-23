@@ -5,8 +5,13 @@ class SampleTest extends PHPUnit_Framework_TestCase
 	private $controller;
 
 	public function setUp() {
-		$request = array();
-		$response = array();
+		$request = new stdClass();
+		$request->params = array(
+			'get' => array(),
+		);
+
+		$response = new stdClass();
+
 		$this->controller = new \Controller\Sample($request, $response);
 	}
 
@@ -29,5 +34,15 @@ class SampleTest extends PHPUnit_Framework_TestCase
 
 	public function testSay3word() {
 		$this->assertEquals('how<br>are<br>you', $this->controller->say3word("how", "are", "you"));
+	}
+
+	public function testShowRequestInfo() {
+		$this->expectOutputRegex('/^stdClass Object.*/');
+		$this->controller->showRequestInfo();
+	}
+
+	public function testShowGetParam() {
+		$this->expectOutputRegex('/^Array.*/');
+		$this->controller->showGetParam();
 	}
 }
