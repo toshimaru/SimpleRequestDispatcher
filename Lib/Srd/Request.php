@@ -53,9 +53,9 @@ class Request
 	 * @return void
 	 */
 	protected function parseRequest($url) {
-		// if (BASE_DIR) {
-		// 	$url = str_replace(BASE_DIR, '', $url);
-		// }
+		if (dirname($_SERVER['PHP_SELF']) !== '/') {
+			$url = str_replace(dirname($_SERVER['PHP_SELF']), '', $url);
+		}
 		if (strpos($url,'?') !== false) {
 			$url = substr($url, 0, strpos($url, '?'));
 		}
