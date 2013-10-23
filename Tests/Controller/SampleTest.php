@@ -1,18 +1,19 @@
 <?php
+namespace Controller;
 
-class SampleTest extends PHPUnit_Framework_TestCase
+class SampleTest extends \PHPUnit_Framework_TestCase
 {
 	private $controller;
 
 	public function setUp() {
-		$request = new stdClass();
+		$request = new \stdClass();
 		$request->params = array(
 			'get' => array(),
 		);
 
-		$response = new stdClass();
+		$response = new \stdClass();
 
-		$this->controller = new \Controller\Sample($request, $response);
+		$this->controller = new Sample($request, $response);
 	}
 
 	public function testIndex() {

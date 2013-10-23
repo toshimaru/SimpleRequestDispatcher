@@ -1,14 +1,15 @@
 <?php
+namespace Controller;
 
-class IndexTest extends PHPUnit_Framework_TestCase
+class IndexTest extends \PHPUnit_Framework_TestCase
 {
 	private $controller;
 
 	public function setUp() {
-		$request = new stdClass();
-		$response = new stdClass();
+		$request = new \stdClass();
+		$response = new \stdClass();
 
-		$this->controller = new \Controller\Index($request, $response);
+		$this->controller = new Index($request, $response);
 	}
 
 	public function testIndex() {

@@ -34,8 +34,8 @@ class Request
 	 * @var array
 	 */
 	public $params = array(
-		'url' => array(),
-		'get' => array(),
+		'url'  => array(),
+		'get'  => array(),
 		'post' => array(),
 	);
 
@@ -53,9 +53,9 @@ class Request
 	 * @return void
 	 */
 	protected function parseRequest($url) {
-		if (BASE_DIR) {
-			$url = str_replace(BASE_DIR, '', $url);
-		}
+		// if (BASE_DIR) {
+		// 	$url = str_replace(BASE_DIR, '', $url);
+		// }
 		if (strpos($url,'?') !== false) {
 			$url = substr($url, 0, strpos($url, '?'));
 		}
