@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace Srd;
 /**
  * Response
@@ -68,14 +68,14 @@ class Response
 	 * @var array
 	 */
 	protected $_mimeTypes = array(
-		'html' => array('text/html', '*/*'),
-		'json' => 'application/json',
-		'xml' => array('application/xml', 'text/xml'),
-		'rss' => 'application/rss+xml',
-		'js' => 'text/javascript',
-		'text' => 'text/plain',
+		'html'       => array('text/html', '*/*'),
+		'json'       => 'application/json',
+		'xml'        => array('application/xml', 'text/xml'),
+		'rss'        => 'application/rss+xml',
+		'js'         => 'text/javascript',
+		'text'       => 'text/plain',
 		'javascript' => 'text/javascript',
-		'atom' => 'application/atom+xml',
+		'atom'       => 'application/atom+xml',
 	);
 
 	function __construct(array $options = array()) {

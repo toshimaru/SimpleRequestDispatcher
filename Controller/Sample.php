@@ -32,6 +32,15 @@ class Sample extends Controller
 		return $str . '<br>' . $str2 . '<br>' . $str3;
 	}
 
+	public function requireFirstString($requireStr) {
+		if (empty($requireStr)) {
+			$this->response->statusCode(500);
+			return '500 NG';
+		}
+
+		return '200 OK';
+	}
+
 	private function cantAccess() {
 		return 'You can\'t access here';
 	}

@@ -37,6 +37,10 @@ class SampleTest extends \PHPUnit_Framework_TestCase
 		$this->assertEquals('how<br>are<br>you', $this->controller->say3word("how", "are", "you"));
 	}
 
+	public function testRequireFirstStringOk() {
+		$this->assertEquals('200 OK', $this->controller->requireFirstString("require!"));
+	}
+
 	public function testShowRequestInfo() {
 		$this->expectOutputRegex('/^stdClass Object.*/');
 		$this->controller->showRequestInfo();
