@@ -9,19 +9,27 @@ Requirements
 * Web Server - Apache and mod_rewrite.
 * PHP 5.3 or greater.
 
-Why no model, no view?
+Features
+-----
+* No models, No views.
+* Simple testable controller
+* Useing composer
+* Useing autoload (There are two versions of autoload - with or without composer's autoload)
+
+Why no models, no views?
 -----
 When I joined a project, there are tons of legacy code. The code was seperated with the roles - Model, View, Controller. However, the controller wasn't classed (It's like hell!). To make it testable, I replace only controllers. This dispatcher is written based on the code I wrote at that time.
 
 Quickstart
 -----
 ```bash
-git clone git://github.com/toshimaru/SimpleRequestDispatcher.git
-cd SimpleRequestDispatcher
-composer install
+$ git clone git://github.com/toshimaru/SimpleRequestDispatcher.git
+$ cd SimpleRequestDispatcher
+$ composer install
 #require php5.4+
-php -S localhost:8000
+$ php -S localhost:8000
 ```
+
 If you access `localhost:8000`, you can see '**Your request is successfully dispatched!**'. Enjoy!
 
 Base Directory Structure
