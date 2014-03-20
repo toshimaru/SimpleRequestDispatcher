@@ -1,24 +1,24 @@
-Simple Request Dispatcher
-====================
-PHP Simple Request Dispatcher dispatches URL to Controllers. No Models, No Views. Inspired by CakePHP.
-
 [![Build Status](https://travis-ci.org/toshimaru/SimpleRequestDispatcher.png?branch=master)](https://travis-ci.org/toshimaru/SimpleRequestDispatcher)
+
+Simple Request Dispatcher
+=====
+PHP Simple Request Dispatcher dispatches URL to Controllers. No Models, No Views. Inspired by CakePHP.
 
 Requirements
 -----
-* Web Server - Apache and mod_rewrite.
-* PHP 5.3 or greater.
+* Web Server - Apache and mod_rewrite
+* PHP 5.3 or greater
 
 Features
 -----
-* No models, No views.
+* No models, No views
 * Simple, testable, minimal controller
 * Using composer
 * Using autoload (There are two versions of autoload - with or without composer's autoload)
 
 Why no models, no views?
 -----
-When I joined a project, there were tons of legacy code. The code was seperated with the roles - Model, View, Controller. However, the controller wasn't classed (It was like hell!). To make it testable, I replaced only controllers. This dispatcher is written based on the code I wrote at that time.
+When I joined a project, there were tons of legacy code. The code was seperated with some roles - Model, View, Controller, yeah, it was like MVC. However, the controller wasn't classed and testable(I felt like hell!). I ended up replacing only controllers. This dispatcher is written based on the code I wrote at that time.
 
 Quickstart
 -----
@@ -26,11 +26,11 @@ Quickstart
 $ git clone git://github.com/toshimaru/SimpleRequestDispatcher.git
 $ cd SimpleRequestDispatcher
 $ composer install
-# require php5.4+
+# require php5.4+ to use command `php -S`
 $ php -S localhost:8000
 ```
 
-If you access `localhost:8000`, you can see '**Your request is successfully dispatched!**'. Enjoy!
+Access `localhost:8000` with your browser, you can see '**Your request is successfully dispatched!**'. Enjoy!
 
 Base Directory Structure
 -----
@@ -56,9 +56,9 @@ Controllers
 
 Default controller is `Index.php` and default action is `function index()`.
 
-All controllers should extend `\Controller\Controller` class so that every controller can use common function which is defined in `Controller.php`.
+All controllers should extend `\Controller\Controller` class so that every controller can use common functions which are defined in `Controller.php`.
 
-See `Sample.php` to see how to write controller.
+See `Sample.php` to see how it works.
 
 Unit Testing
 -----
