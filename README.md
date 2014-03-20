@@ -32,14 +32,14 @@ $ php -S localhost:8000
 
 Access `localhost:8000` with your browser, you can see '**Your request is successfully dispatched!**'. Enjoy!
 
-Base Directory Structure
+Directory Structure
 -----
 
 | Directory   | Description         |
 | ----------- | ------------------- |
-| Controller/ | Contains the controllers.          |
-| Tests/      | Contains the tests. Using PHPUnit. |
-| Lib/        | Contains core code.                |
+| Controller/ | Contains controllers.                 |
+| Tests/      | Contains tests. Written with PHPUnit. |
+| Lib/        | Contains core code.                   |
 
 Dispatch rule
 -----
